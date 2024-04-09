@@ -16,12 +16,12 @@ function doRequest() {
   })
 }
 app.get('/', async (req, res) => {
-  let i
-  for (i = 0; i < 50; i++) {
+  let totalCount = 50
+  for (let i = 0; i < totalCount; i++) {
     let res = await doRequest()
     console.log(res, i)
   }
-  res.send(`Done calling ${i} times`)
+  res.send(`Done calling ${totalCount} times`)
 })
 
 app.listen(3001, () => {
